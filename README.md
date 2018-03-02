@@ -1,14 +1,12 @@
-# Auth0 for Chrome Extensions
+# RapLocal Chrome Extension
 
-This package allows you to use Auth0 within a Chrome extension.
+This Chrome extension allows users to mark highlights with a question mark or explanation mark, contributing data to the [RapLocal](https://github.com/davidemorotti/raplocal-chrome) system.
 
-## Overview
-
-This package provides a generic `PKCEClient.js` file which allows you to use the [Proof Key for Code Exchange](https://tools.ietf.org/html/rfc7636) spec, which is recommended for native applications.
-
-With this package, you can set up your Chrome extension to use Auth0's hosted [Lock](https://auth0.com/lock) widget. It uses the `launchWebAuthFlow` from Chrome's identity API to retrieve tokens from Auth0.
+To install, go to Extensions, enable *Developer mode* at the top, and use `Load Unpacked Extension` in this folder.
 
 ## Integration
+
+This package provides a generic `PKCEClient.js` file which allows you to use the [Proof Key for Code Exchange](https://tools.ietf.org/html/rfc7636) spec, which is recommended for native applications. With this package, you can set up your Chrome extension to use Auth0's hosted [Lock](https://auth0.com/lock) widget. It uses the `launchWebAuthFlow` from Chrome's identity API to retrieve tokens from Auth0.
 
 ### Getting Started
 
@@ -134,15 +132,15 @@ Auth0's hosted Lock widget will be displayed in a new window.
 
 ### `Auth0CLient(domain, clientId)`
 
-The library exposes `Auth0Client` which extends a generic `PKCEClient`. 
+The library exposes `Auth0Client` which extends a generic `PKCEClient`.
 
 - `domain` : Your Auth0 Domain, to create one please visit https://auth0.com/
-- `clientId`: The clientId for the chrome client, to create one 
+- `clientId`: The clientId for the chrome client, to create one
    - Visit https://manage.auth0.com/#/clients and click on  `+ Create Client`
    - Select "Native" as the client type
    - In the **Allowed Callback URLs** section, add `https://<yourchromeappid>.chromiumapps.org/auth0` as an allowed callback url
    - In the **Allowed Origins** section, add `chrome-extension://<yourchromeappid>`
-   
+
 ### `Promise <Object> Auth0Client#authenticate(options, interactive)`
 
 The `authenticate` method makes a call to the Authentication API and renders the log in UI if `userinteraction` is required. Upon completion, this method will resolve an object which will contain the requested token and meta information related to the authentication process.
