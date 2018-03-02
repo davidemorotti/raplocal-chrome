@@ -1,0 +1,36 @@
+{
+    "name": "Raplocal",
+    "version": "0.4.0",
+    "manifest_version": 2,
+    "description": "Project built at SRG SSR HackDays 2018",
+    "homepage_url": "https://www.hackdays.ch/",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "browser_action": {
+        "default_title": "Raplocal",
+        "default_popup": "src/browser_action/browser_action.html"
+    },
+    "background": {
+        "scripts": ["./env.js", "src/jquery-2.2.4.min.js", "vendor/auth0chrome.min.js", "src/main.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "css": ["src/extension.css"],
+        "js": [
+            "src/jquery-2.2.4.min.js",
+            "src/jquery.mark.min.js",
+            "src/popper.min.js",
+            "src/bootstrap.min.js",
+            "src/contentscript.js"
+        ],
+        "matches": ["<all_urls>"]
+    }],
+    "permissions": [
+        "identity",
+        "notifications",
+        "https://*.auth0.com/*"
+    ]
+}

@@ -1,0 +1,111 @@
+::selection {
+    background: #8c42ff;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #8c42ff;
+    color: #fff;
+}
+
+.highlightCaret {
+    border-style: solid;
+    border-width: 10px 10px 0px 10px;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-top-color: #fffee9;
+    border-right-color: transparent;
+    width: 0px;
+    height: 0px;
+    display: block;
+    position: absolute;
+    top: 102px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#highlight_menu {
+    font-family: 'Open Sans', Sans;
+    font-weight: 100;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 5px;
+    background: #fffee9;
+    position: absolute;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    z-index: 1000000;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+
+.highlightLink {
+	position: relative;
+    color: #333;
+    text-decoration: none;
+    background-color: #fff;
+    font-family: sans-serif;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 3em;
+    display: block;
+    padding: 4px;
+    border-radius: 8px;
+	width: 70px;
+	text-align: center;
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+    border-bottom: none;
+}
+
+.questionHighlightLink {
+    box-shadow: 0px 9px 0px #bf3eff, 0px 9px 25px rgba(0,0,0,.7);
+}
+
+.exclamationHighlightLink {
+    box-shadow: 0px 9px 0px #05dbd8, 0px 9px 25px rgba(0,0,0,.7);
+}
+
+.rapHighlighted {
+    background: #8c42ff;
+    color: #fff;
+}
+
+.highlightLink:hover {
+    text-decoration: none;
+    color: #333;
+    border-bottom: none;
+}
+
+.questionHighlightLink:active {
+    box-shadow: 0px 3px 0px #bf3eff, 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+}
+
+.exclamationHighlightLink:active {
+    box-shadow: 0px 3px 0px #05dbd8, 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+}
+
+.highlight_menu_animate {
+    transition: top 20ms ease-out, left 20ms ease-out;
+}
+
+.side-by-side {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 10px;
+}
+
+.side-by-side li {
+    display: inline-block;
+    background: none;
+    padding: 0;
+    margin: 5px 5px 15px;
+}
