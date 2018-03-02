@@ -4,6 +4,8 @@ This Chrome extension allows users to mark highlights with a question mark or ex
 
 To install, go to Extensions, enable *Developer mode* at the top, and use `Load Unpacked Extension` in this folder.
 
+![](README.png)
+
 ## Integration
 
 This package provides a generic `PKCEClient.js` file which allows you to use the [Proof Key for Code Exchange](https://tools.ietf.org/html/rfc7636) spec, which is recommended for native applications. With this package, you can set up your Chrome extension to use Auth0's hosted [Lock](https://auth0.com/lock) widget. It uses the `launchWebAuthFlow` from Chrome's identity API to retrieve tokens from Auth0.
