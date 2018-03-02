@@ -32,34 +32,6 @@ chrome-extension://<YOUR_APP_ID>
 
 ### Installation
 
-Install the `auth0-chrome` package with npm.
-
-```bash
-npm install auth0-chrome
-```
-
-The `dist` folder contains a webpack bundle, including a minified version.
-
-Configure your `manifest.json` file to run the `auth0chrome` script, along with an `env.js` and `main.js` script for your project. The `default_popup` should be set to an HTML file containing the content you would like to display.
-
-```js
-{
-  ...
-  "browser_action": {
-    "default_title": "Auth0",
-    "default_popup": "src/browser_action/browser_action.html"
-  },
-  "background": {
-    "scripts": ["./env.js", "node_modules/auth0-chrome/dist/auth0chrome.min.js", "src/main.js"],
-    "persistent": false
-  },
-  "permissions": [
-    "identity",
-    "notifications"
-  ]
-}
-```
-
 Add your Auth0 credentials in the `env.js` file.
 
 ```js
@@ -99,7 +71,7 @@ chrome.runtime.onMessage.addListener(function (event) {
     // device
     //  - required if requesting the offline_access scope.
     let options = {
-      scope: 'openid offline_access',
+      scope: 'openid offline_access profile',
       device: 'chrome-extension'
     };
 
@@ -134,15 +106,15 @@ Auth0's hosted Lock widget will be displayed in a new window.
 
 ### `Auth0CLient(domain, clientId)`
 
-The library exposes `Auth0Client` which extends a generic `PKCEClient`. 
+The library exposes `Auth0Client` which extends a generic `PKCEClient`.
 
 - `domain` : Your Auth0 Domain, to create one please visit https://auth0.com/
-- `clientId`: The clientId for the chrome client, to create one 
+- `clientId`: The clientId for the chrome client, to create one
    - Visit https://manage.auth0.com/#/clients and click on  `+ Create Client`
    - Select "Native" as the client type
    - In the **Allowed Callback URLs** section, add `https://<yourchromeappid>.chromiumapps.org/auth0` as an allowed callback url
    - In the **Allowed Origins** section, add `chrome-extension://<yourchromeappid>`
-   
+
 ### `Promise <Object> Auth0Client#authenticate(options, interactive)`
 
 The `authenticate` method makes a call to the Authentication API and renders the log in UI if `userinteraction` is required. Upon completion, this method will resolve an object which will contain the requested token and meta information related to the authentication process.
@@ -157,16 +129,6 @@ The `access_token` returned at the end of the authentication flow can then be us
 ## Contributing
 
 Pull requests are welcome!
-
-## Development
-
-Install the dev dependencies.
-
-```bash
-npm install
-```
-
-When changes are made, run `npm run build` to produce new files for the `dist` folder.
 
 ## What is Auth0?
 
@@ -190,7 +152,7 @@ If you have found a bug or if you have a feature request, please report them at 
 
 ## Author
 
-[Auth0](auth0.com)
+[Raplocal](raplocal.soda.camp)
 
 ## License
 
