@@ -2,6 +2,8 @@
 
 This Chrome extension allows users to mark highlights with a question mark or explanation mark, contributing data to the [RapLocal](https://github.com/davidemorotti/raplocal-chrome) system.
 
+![](screenshot.png)
+
 To install, go to Extensions, enable *Developer mode* at the top, and use `Load Unpacked Extension` in this folder.
 
 ![](README.png)
